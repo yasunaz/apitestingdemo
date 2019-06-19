@@ -1,0 +1,88 @@
+
+1. Create Project: MAVEN Project, dependencies, Test API 
+2. Create a test case with JUnit just a simple one 
+	given().when().get(URL).then().statusCode(200);
+	and introduce the TestConfig 
+
+3. Introduce the test logging capabilities for easier debugs
+	    given().log()  			  // logs everything for API calls
+			.ifValidationFails()  // logs everything if only test fails
+		.when().get("users/2")
+		.then()
+			.log()
+			.all()
+		.statusCode(200);
+		
+4. Request Specification Builder:
+	  - used for to make sure that 
+	    every request will contain these 
+	    specification 
+	    
+5. Response Specification Builder:
+	  - for example for all of the test
+	    we want to make sure that we are getting 
+	    code:200, we want to add these to commonly 
+	  
+6. Adding multiple Request & Response Specification
+	outside of the testSetup() methods, create a static variable 
+	for the specific Request Specification. 
+	
+
+7. Adding End-point to an interface 
+	==> make sure to abstract out the End-point
+	    because it might change later 
+	    so you have to look all of the End-point usage 
+	    and update. 
+	    
+	    create a interface and put constant in these 
+	    
+	    
+===== Different Request Tyeps ==========
+1. Get Requst 
+   Get with Parameter 
+2. Post Requst
+	    given()
+		.spec(reqres_requestSpecc)
+		.body(bodyJson)
+		.when().post(EndPoint.USERS)
+		.then();
+3. Put Request: Updating the data 
+4. Delete Request 
+
+6. Query Parameters:
+		http://api.football-data.org/v1/competitions/?season=2016
+	   
+	   given()
+			.spec(football_requestSpecc)
+			.queryParam("season", 2016)
+		.when()
+			.get("competitions");
+			
+7. Assert & Extract from the Response body 
+	
+	
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	   
+	 
+	
